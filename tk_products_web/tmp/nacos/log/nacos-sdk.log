@@ -1,0 +1,19 @@
+2025-02-28T16:43:23.850+0800	ERROR	security/security_proxy.go:117	login in err:no matched provider
+2025-02-28T16:43:23.853+0800	WARN	cache/disk_cache.go:193	read Config Content failed. cause file doesn't exist, file path: tmp/nacos/cache\config\tk_products_web.json@@dev@@d7641b29-7426-4cdf-b94f-1e14844bc131_failover.
+2025-02-28T16:43:23.853+0800	INFO	rpc/rpc_client.go:157	init rpc client for name %!(EXTRA string=config-0-daafeb54-263a-4013-ab4a-c6dfde61e401)
+2025-02-28T16:43:23.853+0800	INFO	rpc/rpc_client.go:166	get app conn labels from client config map[] 
+2025-02-28T16:43:23.853+0800	INFO	rpc/rpc_client.go:168	get app conn labels from env map[] 
+2025-02-28T16:43:23.853+0800	INFO	rpc/rpc_client.go:171	final app conn labels : map[] 
+2025-02-28T16:43:23.853+0800	DEBUG	rpc/rpc_client.go:393	config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 register server push request:ConfigChangeNotifyRequest handler:ConfigChangeNotifyRequestHandler
+2025-02-28T16:43:23.853+0800	DEBUG	rpc/rpc_client.go:393	config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 register server push request:ConnectResetRequest handler:ConnectResetRequestHandler
+2025-02-28T16:43:23.853+0800	DEBUG	rpc/rpc_client.go:393	config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 register server push request:ClientDetectionRequest handler:ClientDetectionRequestHandler
+2025-02-28T16:43:23.853+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 try to connect to server on start up, server: {serverIp:192.168.84.10 serverPort:8848 serverGrpcPort:9848}
+2025-02-28T16:43:23.853+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-28T16:43:23.853+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-28T16:43:23.853+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable
+2025-02-28T16:43:23.901+0800	INFO	util/common.go:96	Local IP:172.20.10.4
+2025-02-28T16:43:26.855+0800	WARN	rpc/rpc_client.go:329	[RpcClient.Start] config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 fail to connect to server on start up, error message=server check request failed , err:rpc error: code = DeadlineExceeded desc = received context error while waiting for new LB policy update: context deadline exceeded, start up retry times left=2
+2025-02-28T16:43:26.855+0800	INFO	rpc/rpc_client.go:327	[RpcClient.Start] config-0-daafeb54-263a-4013-ab4a-c6dfde61e401 try to connect to server on start up, server: {serverIp:192.168.84.10 serverPort:8848 serverGrpcPort:9848}
+2025-02-28T16:43:26.855+0800	INFO	rpc/grpc_client.go:175	check tls config %!(EXTRA *constant.TLSConfig=&{false false false    })
+2025-02-28T16:43:26.855+0800	INFO	rpc/grpc_client.go:180	try to get tls config from env
+2025-02-28T16:43:26.855+0800	INFO	rpc/grpc_client.go:189	 tls config from env is not enable

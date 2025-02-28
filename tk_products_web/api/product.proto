@@ -1,0 +1,128 @@
+syntax = "proto3";
+
+package product;
+
+option go_package = "/product";
+
+service ProductCatalogService {
+  rpc CreateProduct(CreateProductReq) returns (CreateProductResp) {}
+  rpc UpdateProduct(UpdateProductReq) returns(UpdateProductResp){}
+  rpc DeleteProduct(DeleteProductReq) returns(DeleteProductResp) {}
+  rpc ListProducts(ListProductsReq) returns (ListProductsResp) {}
+  rpc SearchProducts(SearchProductsReq) returns(SearchProductsResp) {}
+  rpc GetProduct(GetProductReq) returns (GetProductResp) {}
+  rpc IncrementClick(IncrementClickReq) returns (IncrementClickResp) {}
+  rpc IncreateFavorite(IncreateFavoriteReq)returns (IncreateFavoriteResp) {}
+  rpc GetProductRankingHots(GetProductRankingHotsReq) returns(GetProductRankingHotsResp) {}
+}
+
+message GetProductRankingHotsResp{
+  repeated Products products = 1;
+}
+
+message GetProductRankingHotsReq {
+  int32 category_id = 1;
+}
+message IncreateFavoriteResp{}
+
+message IncreateFavoriteReq {
+  int32 id =1;
+  int32 uid =2;
+}
+
+message IncrementClickResp {
+
+}
+message IncrementClickReq {
+  int32 id =1;
+  int32 uid =2;
+}
+
+message SearchProductsResp {
+  repeated Products products = 1;
+}
+message SearchProductsReq {
+  int32 id = 1;
+  Products products =2;
+}
+
+
+message DeleteProductResp {
+
+}
+
+message DeleteProductReq {
+  int32 id = 1;
+  int32 uid = 2;
+}
+
+message  UpdateProductResp {
+  int32 id = 1;
+  Products products =2;
+}
+message UpdateProductReq{
+  int32 page = 1;
+  int64 page_size = 2;
+  Products products = 3;
+}
+
+message Products {
+  string name = 1;
+  int32  category_id   = 2;
+  string category_name = 3;
+  int32  brand_id = 4;
+  string  brand_name = 5;
+  string  description = 6;
+  bool  is_new= 7;
+  bool  is_hot= 8;
+  bool on_sale= 9;
+  int32 click= 10;
+  int32  sale= 11;
+  int32  favorite= 12;
+  float mark_price= 13;
+  float shop_price= 14;
+  string picture= 15;
+  repeated string images= 16;
+  string  sn           = 17;
+  int32  uid          = 18;
+}
+
+message CreateProductResp {
+  int32 id = 1;
+  Products products =2;
+}
+
+message CreateProductReq {
+  Products products = 1;
+}
+
+message ListProductsReq{
+  int32 page = 1;
+  int64 page_size = 2;
+  string category_name = 3;
+}
+
+
+
+message Product {
+  uint32 id = 1;
+  string name = 2;
+  string description = 3;
+  string picture = 4;
+  float price = 5;
+  repeated string categories = 6;
+}
+
+message ListProductsResp {
+  repeated Products products = 1;
+}
+
+message GetProductReq {
+  uint32 id = 1;
+}
+
+message GetProductResp {
+  Products product = 1;
+}
+
+

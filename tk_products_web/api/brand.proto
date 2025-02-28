@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package brand;
+
+option go_package = "/brand";
+
+service BrandService {
+  rpc CreateBrand(CreateBrandReq) returns (CreateBrandResp) {}
+  rpc UpdateBrand(UpdateBrandReq) returns(UpdateBrandResp){}
+  rpc DeleteBrand(DeleteBrandReq) returns(DeleteBrandResp) {}
+  rpc ListBrands(ListBrandsReq) returns (ListBrandsResp) {}
+  rpc SearchBrands(SearchBrandtsReq) returns(SearchBrandsResp) {}
+  rpc GetBrand(GetBrandReq) returns (GetBrandResp) {}
+}
+message GetBrandResp {
+  repeated Brands brand = 1;
+}
+
+message GetBrandReq {
+  int32 uid = 1;
+}
+
+message SearchBrandsResp {
+  repeated Brands brand = 1;
+}
+
+message SearchBrandtsReq {
+  string name = 1;
+}
+
+message ListBrandsResp {
+ repeated Brands brand = 1;
+}
+
+message ListBrandsReq{
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+
+message DeleteBrandResp{
+
+}
+
+message DeleteBrandReq {
+  int32 id = 1;
+  int32 uid = 2;
+}
+
+message UpdateBrandResp {
+}
+
+message UpdateBrandReq {
+  Brands brand = 1;
+}
+
+message CreateBrandResp {
+  Brands brand = 1;
+}
+message CreateBrandReq {
+    Brands brand = 1;
+}
+message Brands {
+  int32 id = 1;
+  string name =2;
+  string logo = 3;
+  int32  uid = 4;
+}

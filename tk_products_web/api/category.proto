@@ -1,0 +1,63 @@
+syntax = "proto3";
+
+package category;
+
+option go_package = "/category";
+
+service categoryService {
+  rpc CreateCategory(CreateCategoryReq) returns (CreateCategoryResp) {}
+  rpc UpdateCategory(UpdateCategoryReq) returns(UpdateCategoryResp){}
+  rpc DeleteCategory(DeleteCategoryReq) returns(DeleteCategoryResp) {}
+  rpc ListCategorys(ListCategorysReq) returns (ListCategorysResp) {}
+  rpc SearchCategorys(SearChcategorytsReq) returns(SearchcategorysResp) {}
+}
+
+message SearchcategorysResp {
+  repeated Categorys category = 1;
+}
+
+message SearChcategorytsReq {
+  string name = 1;
+}
+
+message ListCategorysResp {
+  repeated Categorys category = 1;
+}
+
+message ListCategorysReq{
+  int32 page = 1;
+  int32 page_size = 2;
+}
+
+
+message DeleteCategoryResp{
+
+}
+
+message DeleteCategoryReq {
+  int32 id = 1;
+  int32 uid = 2;
+}
+
+message UpdateCategoryResp {
+}
+
+message UpdateCategoryReq {
+  Categorys category = 1;
+}
+
+message CreateCategoryResp {
+  Categorys category = 1;
+}
+message CreateCategoryReq {
+  Categorys category = 1;
+}
+message Categorys {
+  int32 id = 1;
+  string name =2;
+  int32 level = 3;
+  int32  uid = 4;
+  int32 parent_id = 5;
+  repeated Categorys parent_category = 6;
+  int32 root_id = 7;
+}
